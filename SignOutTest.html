@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="google-signin-client_id" content="587601461860-n896megtacab9ihlt45paeqhuhgn2jjq.apps.googleusercontent.com">
+</head>
+<body>
+  <h1>My First Web Page</h1>
+  <p>My first paragraph.</p>
+
+  <script>
+    
+ 
+     function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+
+    function onLoad() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+    }
+  </script>
+
+
+<button type="button" onclick="signOut();">Sign out</button>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+
+</body>
+</html>
